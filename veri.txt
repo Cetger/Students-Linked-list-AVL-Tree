@@ -1,0 +1,1118 @@
+//Ödev 1
+
+// 1030520710 
+// Serdar Çengel
+
+// 1030520526
+// Bahadýr Utku Gögen
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h> 
+#include <Windows.h>
+#include <unistd.h>
+#include <ctype.h>
+#include <string.h>
+
+
+//Ana menümüz.
+void firstMenu(){ 
+	
+	
+    printf("\n        -Menü-"); 
+	printf("\n 1- Bilgisayar aðlarý menüsü (Liste)");
+	printf("\n 2- Bilgisayar mimarisi menüsü (AVL)");
+	printf("\n 3- Her iki dersi birden fazla alan öðrenciler");
+	printf("\n 4- Sadece bilgisayar aðlarý dersini alan öðrenciler");
+	printf("\n 5- Bilgisayar aðlarý A grubu A-K");
+	printf("\n 6- Bilgisayar aðlarý B grubu L-Z");
+	printf("\n 7- B. aðlarý veya B. mimarisi alan E.E ");
+	printf("\n 8- Her iki dersi de alanlar adlarýna göre sýrala");
+	printf("\n 9- Sadece bilgisayar aðlarýný alanlarý soyadlarýna göre sýrala");
+	printf("\n 10- Bilgisayar mimarisi alanlarý numarasýna göre sýrala ");
+	printf("\n 0- Çýkýþ");
+    printf("\n \n Seçiminizi yapýn\n \n");
+	
+
+}
+// Bilgisayar aðlarý ile alakalý liste iþlemlerinie yapacaðýmýz menü
+void bilAglariMenu(){
+	printf("\n Bilgisayar aðlarý menüsü\n");
+	printf("\n 1- Yeni liste  oluþtur");
+	printf("\n 2- Listeyi görüntüle");
+	printf("\n 3- Araya kayýt ekle");
+	printf("\n 4- Bir kaydý sil");
+	printf("\n 5- Bir kayýt ara");
+	printf("\n 0- Geri");
+	printf("\n\n  Seçiminizi yapýn.\n");
+}
+
+// Bilgisayar mimarisi ile alakalý AVL aðaç iþlemlerimizi yapacaðýmýz menü
+void bilMimMenusu(){
+ 
+     	printf("\n Bilgisayar Mimarisi Menüsü");
+		printf("\n 1- Kayýt ekle:");
+        printf("\n 2- Bir kaydý sil:");
+        printf("\n 3- Aðacý görüntüle");
+        printf("\n 4- Bir kaydý ara");
+        printf("\n 0- Geri ");
+        printf("\n\n  Seçiminizi yapýn.");
+ 
+}
+
+// Bilgisayar aðlari dersini alan öðrenciler için ayrýlan yer (Liste)
+struct student 
+{
+	char name[100];
+	char surname[100];
+	char department[100];
+	char studentNo[100];
+	char dersalma[100];
+	struct student *next;
+	
+};
+struct student *first=NULL,*last=NULL,*k;
+
+// Bilgisayar mimarisi dersini alan öðrenciler için ayrýlan yer(Aðaç)
+typedef struct Dugum
+{
+    int no;
+    struct Dugum *sol;
+    struct Dugum *sag;
+    int yukseklik;
+    char *ad;
+    char *soyad;
+    char *bolum;
+    char *kdefa;
+}Dugum;
+
+
+
+/* Programda olumlu ya da olumsuz dönüþler olduðunda 
+kullanmak üzere yazýlmýþ iki adet basit melodi*/
+void correctSound()
+{   //Fa oktav
+	Beep(2093/2,200);
+	Beep(2093,150);
+
+}
+
+void errorSound(){
+	//sol mi do
+	Beep(392,300);
+	Beep(329,200);
+	Beep(261,800);	
+}
+
+
+//Baðlantýlý Liste oluþturma
+void create_linked_list(int n)
+{
+int i;
+int student_counter=1;
+if(n<1)
+{   errorSound();
+	printf("\nListeye eklenecek kiþi sayýsý 1'den küçük olamaz.'");
+}
+   	else if(n>0)
+{
+	
+		first=(struct student*)malloc(sizeof(struct student));
+		printf("%d- Öðrencinin adý : \n",student_counter);
+		scanf("%s",first->name);
+		printf("%d- Öðrencinin soyadý : \n",student_counter);
+		scanf("%s",first->surname);
+		printf("%d- Öðrencinin numarasý : \n",student_counter);
+		scanf("%s",first->studentNo);
+		printf("%d- Öðrencinin bölümü : \n",student_counter);
+		scanf("%s",first->department);
+		printf("%d- Öðrenci kaçýncý defa bu dersi alýyor : \n",student_counter);
+		scanf("%s",first->dersalma);
+		first->next=NULL;
+		last=first;
+		correctSound();
+}	
+
+   else if(n==1)
+{
+ firstMenu();
+}
+printf("\n");
+
+for(i=1;i<n;i++){
+	student_counter++;
+	k=(struct student*)malloc(sizeof(struct student));
+	printf("%d- Öðrencinin adý : \n",student_counter);
+	scanf("%s",k->name);
+	printf("%d- Öðrencinin soyadý : \n",student_counter);
+	scanf("%s",k->surname);
+	printf("%d- Öðrencinin numarasý : \n",student_counter);
+	scanf("%s",k->studentNo);
+	printf("%d- Öðrencinin bölümü : \n",student_counter);
+	scanf("%s",k->department);
+	printf("%d- Öðrenci kaçýncý defa bu dersi alýyor : \n",student_counter);
+	scanf("%s",k->dersalma);
+	printf("\n");
+	k->next=NULL;
+	last->next=k;
+	last=k;
+	correctSound();
+	if(i==n-1){
+		printf("\n Eklemeler yapýldý. Ana menüye dönüyorsunuz.");
+	}
+
+ }
+
+}
+	
+//Baðlantýlý Liste arama yapma
+void search_in_linked_list(){
+	char r[10];	
+	int flag=0;
+	printf("\n Aramak istediðiniz öðrenci numarasýný giriniz");
+	scanf("%s",r);
+	struct student *t;
+	t=first;
+	while(t!=NULL)
+	{
+		if(strcmpi(r,t->studentNo)==0)
+		{   correctSound();
+			printf("\n Aranan numara listede bulundu.");
+			printf("\n Adý :%s ",t->name);
+			printf("\n Soyadý :%s ",t->surname);
+			printf("\n Numarasý :%s ",t->studentNo);
+			printf("\n Bölümü :%s ",t->department);
+			printf("\n %s. Defa bu dersi alýyor : ",t->dersalma);
+			flag=1;
+			break;
+			
+		}
+		
+		t=t->next;
+	}
+	if(flag==0)
+	{
+	errorSound();
+	printf("\n Böyle bir numara kaydý bulunmamaktadýr. Ana menüye dönüyorsunuz.\n");
+	}
+
+}
+
+//Baðlantýlý Liste görüntüleme
+void display_linked_list(){
+	
+	int sayac=1;
+	struct student *t;
+	t=first;
+	if(t==NULL)
+	{   errorSound();
+		printf("\n Listede veri yoktur. Yeni bir iþlem seç");
+	}
+	
+	else if(t!=NULL)
+	{   correctSound();
+		printf("\n Bilgisayar aðlarýný alanlar listesi \n");
+	}
+	
+	while(t!=NULL)
+    {    
+        printf("\n Adý : %s",t->name);
+		printf("\n Soyadý : %s",t->surname);
+		printf("\n Numarasý : %s",t->studentNo); 	
+   	 	printf("\n Bölümü : %s",t->department);
+   	 	printf("\n Dersi alma : %s\n\n",t->dersalma);
+   	 	t=t->next;
+   	 	sayac++;	 	
+    }
+}
+
+//Bir kayýttan sonra veri ekleme
+void insertAfter(){
+	char r[10];
+	int flag=0;
+	printf("\n Hangi numaradan sonra veri eklenecek?");
+	scanf("%s",r);
+	struct student *t;
+	t=first;
+	while(t!=NULL)
+	{
+      if(strcmpi(r,t->studentNo)==0)
+	  {
+		
+		k=(struct student*)malloc(sizeof(struct student));
+		printf("\n Eklenecek öðrencinin adý: ");
+		scanf("%s",k->name);
+		printf("\n Eklenecek öðrencinin soyadý: ");
+		scanf("%s",k->surname);
+		printf("\n Eklenecek öðrencinin numarasý: ");
+		scanf("%s",k->studentNo);
+		printf("\n Eklenecek öðrencinin bölümü");
+		scanf("%s",k->department);
+		printf("\n Eklenecek öðrenci bu dersi kaçýncý kez alýyor?");
+		scanf("%s",k->dersalma);
+		k->next=t->next;
+		t->next=k;
+		flag=1;
+		correctSound();
+		break;
+	  } 
+     t=t->next;
+	}
+	
+	if(flag==0){
+		errorSound();
+		printf("\n Listeye ekleme iþlemi tamamlanamadý\n");
+	}
+	firstMenu();
+}
+
+//Listeden veri silme
+
+void delete_from_linkedlist()
+{
+	struct student *back,*k;
+	char r[10];
+	int flag=0;
+	back=first;
+	if(back==NULL)
+	{   errorSound();
+		printf("\n Listede veri yoktur. Yeni bir iþlem seçiniz");
+		firstMenu();
+	}
+	else
+	{
+		
+		printf("\n Silmek istediðiniz öðrencinin numarasýný giriniz.");
+		scanf("%s",r);
+		if(strcmpi(r,first->studentNo)==0)
+		{
+			first=first->next;
+			flag=1;
+		}
+		else
+		{
+			back=first;
+			k=first->next;
+			
+			while(k!=NULL) 
+			{
+				if(strcmpi(r,k->studentNo)==0)
+				{
+					back->next=k->next;
+					flag=1;
+					break;
+				}
+			}
+		}
+		if(flag==1)
+		{   correctSound();
+			printf("\n Kayýt silindi");
+		}
+		
+		else if(flag==0){
+			errorSound();
+			printf("\n Bulunamadý");
+		}
+	}
+}
+
+// BURADAN SONRA AVL ÝLE ALAKALI gereken fonksiyonlar vs.
+
+
+
+// Hangi sayý daha büyük return eden fonksiyon. Kütüphane çakýþmasý yüzünden maxx adýný verdik. 
+ int maxx(int a,int b);
+
+int maxx(int a, int b)
+{
+    return (a > b)? a : b;
+}
+ 
+// Aðacýn yüksekliði için yazdýðýmýz fonksiyon
+int yukseklik(struct Dugum *N)
+{
+    if (N == NULL)
+        return 0;
+    return N->yukseklik;
+}
+ 
+
+/* Yeni düðüm oluþturma 
+No öðrenci no
+A ad
+S soyad
+B bölüm
+K dersi kaç defa alýyor.
+
+ */
+ 
+struct Dugum* newNode(int no,char a[20],char s[20], char b[20],char k[20])
+{
+    struct Dugum* node = (struct Dugum*)
+                        malloc(sizeof(struct Dugum));
+    node->no   = no;
+    node->ad=a;
+    node->soyad=s;
+    node->bolum=b;
+    node->kdefa=k;
+    node->sol   = NULL;
+    node->sag  = NULL;
+    node->yukseklik = 1;  
+    return(node);
+}
+ 
+ 
+//Saða dönderme için
+struct Dugum *sagdon(struct Dugum *y)
+{
+    struct Dugum *x = y->sol;
+    struct Dugum *T2 = x->sag;
+ 
+    x->sag = y;
+    y->sol = T2;
+ 
+    // Yüksekliði güncelleme
+    y->yukseklik = maxx(yukseklik(y->sol), yukseklik(y->sag))+1;
+    x->yukseklik = maxx(yukseklik(x->sol), yukseklik(x->sag))+1;
+ 
+    return x;
+}
+ 
+//Sola dönderme
+struct Dugum *soldon(struct Dugum *x)
+{
+    struct Dugum *y = x->sag;
+    struct Dugum *T2 = y->sol;
+ 
+    y->sol = x;
+    x->sag = T2;
+ 
+     //Yükseklik güncelleme 
+    x->yukseklik = maxx(yukseklik(x->sol), yukseklik(x->sag))+1;
+    y->yukseklik = maxx(yukseklik(y->sol), yukseklik(y->sag))+1;
+ 
+    return y;
+}
+ 
+// Denge kontrolü yapýyoruz.
+int dengecontrol(struct Dugum *N)
+{
+    if (N == NULL)
+        return 0;
+    return yukseklik(N->sol) - yukseklik(N->sag);
+}
+
+/* insert etme fonksiyonumuz.
+no,a,s,b,k new ile ayný 
+*/
+struct Dugum* insert(struct Dugum* node, int no,char a[20], char s[20], char b[20],char k[20])
+{
+    
+    if (node == NULL)
+        return(newNode(no,a,s,b,k));
+ 
+    if (no < node->no)
+        node->sol  = insert(node->sol, no,a,s,b,k);
+    else if (no > node->no)
+        node->sag = insert(node->sag, no,a,s,b,k);
+    else 
+        return node;
+ 
+    /* 2. Yükseklik güncelleme tekrar. */
+    node->yukseklik = 1 + maxx(yukseklik(node->sol),
+                           yukseklik(node->sag));
+ 
+    /* 3. Denge kontrolümüzü yapýyoruz. */
+    int denge = dengecontrol(node);
+ 
+    // 4 farklý durum olabilir.
+ 
+    // sola çift dönüþ
+    if (denge > 1 && no < node->sol->no)
+        return sagdon(node);
+ 
+    // saða çift dönüþ
+    if (denge < -1 && no > node->sag->no)
+        return soldon(node);
+ 
+    // sað dönüþ
+    if (denge > 1 && no > node->sol->no)
+    {
+        node->sol =  soldon(node->sol);
+        return sagdon(node);
+    }
+ 
+    // sol dönüþ
+    if (denge < -1 && no < node->sag->no)
+    {
+        node->sag = sagdon(node->sag);
+        return soldon(node);
+    }
+ 
+   
+    return node;
+}
+ 
+/* Minumum deðeri almak için yazýyoruz. 
+ Basit bir mantýðý var, sürekli sola git taa ki NULL bulana kadar. */
+struct Dugum * minValueNode(struct Dugum* node)
+{
+    struct Dugum* current = node;
+ 
+    /* loop down to find the leftmost leaf */
+    while (current->sol != NULL)
+        current = current->sol;
+ 
+    return current;
+}
+ 
+/* Bir düðümü silmek için gereken kodlar, düðümü no ya göre seçiyoruz. */
+struct Dugum* deleteNode(struct Dugum* root, int no)
+{
+    // Düðüm boþsa geri dönüyoruz.
+ 
+    if (root == NULL)
+        return root;
+ 
+    // No parametresine göre sola ya da saða gidip, o düðümü arýyoruz. 
+    if ( no < root->no )
+        root->sol = deleteNode(root->sol, no);
+ 
+    
+    else if( no > root->no )
+        root->sag = deleteNode(root->sag, no);
+ 
+   
+    else
+    {
+        // Bir ya da hiç çocuk olma durumu
+        if( (root->sol == NULL) || (root->sag == NULL) )
+        {
+            struct Dugum *temp = root->sol ? root->sol :
+                                             root->sag;
+ 
+            // Hiç çocuk yoksa
+            if (temp == NULL)
+            {
+                temp = root;
+                root = NULL;
+            }
+            else // Bir çocuk varsa
+             *root = *temp; 
+            free(temp);
+        }
+        else
+        {
+            // iki çocuklu düðüm sað aðacýn en küçüðünü alýyoruz.
+            struct Dugum* temp = minValueNode(root->sag);
+ 
+            root->no = temp->no;
+ 
+            // Düðümü siliyoruz.
+            root->sag = deleteNode(root->sag, temp->no);
+        }
+    }
+ 
+    // Aðacýn tek bir düðümü verse geri dönüyoruz.
+    if (root == NULL)
+      return root;
+ 
+    // Yeni durumdaki yüksekliði güncelliyoruz.
+    root->yukseklik = 1 + maxx(yukseklik(root->sol),
+                           yukseklik(root->sag));
+ 
+    // Gerekli denge kontrolünü yapýyoruz.
+    int denge = dengecontrol(root);
+ 
+   // Yine klasik 4 durum var, dengelenene kadar bu kontroller ve iþlemler yapýlýr.
+ 
+    if (denge > 1 && dengecontrol(root->sol) >= 0)
+        return sagdon(root);
+ 
+    if (denge > 1 && dengecontrol(root->sol) < 0)
+    {
+        root->sol =  soldon(root->sol);
+        return sagdon(root);
+    }
+ 
+    if (denge < -1 && dengecontrol(root->sag) <= 0)
+        return soldon(root);
+ 
+    if (denge < -1 && dengecontrol(root->sag) > 0)
+    {
+        root->sag = sagdon(root->sag);
+        return soldon(root);
+    }
+ 
+    return root;
+}
+ 
+//preOrder þekilde sýralama (KÖK SOL SAÐ)
+void preOrder(struct Dugum *root)
+{
+    if(root != NULL)
+    {
+        printf("Öðrenci no: %d Adý:%s Soyadý: %s Bölümü: %s ve %s Defadýr alýyor.   \n", root->no,root->ad,root->soyad,root->bolum,root->kdefa);
+        preOrder(root->sol);
+        preOrder(root->sag);
+    }
+}
+
+
+/*Ýki dersten en az birini alan e.e.m. öðrencileri için yazdýðýmýz fonksiyon. 
+Burada aðaç içindeki bölümü eem olan her öðrenci yazdýrýlýyor.
+Bu aðaca, Baðlý listede olup fakat aðaçta olmayanlarý ekleyeceðiz 
+böylece iki dersten en az birini alan öðrencileri yazdýracaðýz.
+*/
+
+void eemenaz(struct Dugum *root)
+{
+if(root != NULL)
+    {  if(strcmp(root->bolum,"eem")==0)
+        printf("Öðrenci no: %d Adý:%s Soyadý: %s Bölümü: %s ve %s Defadýr alýyor.   \n", root->no,root->ad,root->soyad,root->bolum,root->kdefa);
+        eemenaz(root->sol);
+        eemenaz(root->sag);
+    }
+}
+
+/*
+  2.C)
+  Bilgisayar aðlarý sýnýfýný(Listeyi) Soyadlarýna göre A-K ve L-Z þeklinde yazdýrýn.
+  Bu fonksiyon en genel geçer þekliyle þu mantýkla yazýlýr:
+  Liste baþtan sona gezilir, ve gerekli koþulun durumuna bakýlýr.  
+
+ */
+// Soyadlarý A-K olanlarý listeleme
+void bilgA_K(){
+	   struct student *t;
+	   t=first;
+	   char temp[1]="k";
+        if(t==NULL)
+	{   errorSound();
+		printf("\n Listede veri yoktur. Yeni bir iþlem seç");
+	}else if(t!=NULL)
+	{   correctSound();
+		printf("\n Soyadýna göre listelenmiþ A-K listesi\n");
+	}
+	while(t!=NULL)
+    {  
+       
+	     if(strcmp(t->surname,temp)<0)
+	     printf("Soyadý :%s, Adý :%s, Numarasý :%s \n",t->surname,t->name,t->studentNo);
+   		 t=t->next;
+}
+
+}
+// Soyadlarý L-Z olanlarý Listeleme
+void bilgL_Z(){
+	   struct student *t;
+	   t=first;
+	   char temp[1]="k";
+        if(t==NULL)
+	{   errorSound();
+		printf("\n Listede veri yoktur. Yeni bir iþlem seç");
+	}else if(t!=NULL)
+	{   correctSound();
+		printf("\n Soyadýna göre listelenmiþ L-Z listesi\n");
+	}
+	while(t!=NULL)
+    {  
+       
+	     if(strcmp(t->surname,temp)>0)
+	     printf("Soyadý :%s, Adý :%s, Numarasý :%s \n",t->surname,t->name,t->studentNo);
+    	
+	
+   		 t=t->next;
+}
+
+}
+
+/* onlyBilAg
+   2.B)
+   Sadece bilgisayar aðlarý dersini alan öðrenciler.(Bunlar Bil. Mimarisi almýyor olacak)
+   Bunu yapmak için bilgisayar aðlarý listesini tek tek okuyup, listedeki her elemanýn
+   bilgisayar mimarisi aðacýnda olup olmadýðýný kontrol etmeliyiz, eðer aðaçta varsa 
+   direkt o deðeri atlayýp, listedeki diðer öðrenci için iþlem devam etmeli taa ki liste bitene kadar.
+   Bunun için ortak deðer bulma durumunda diðer liste elemanýna geçecek þekilde basit bir goto kodu kullandýk.
+   
+   ***Burada önemli olan burayý kontrol edeceðim****
+*/
+
+void onlyBilAg(struct Dugum *root){
+	struct student *t;
+	 t=first;
+	 struct Dugum *bas;
+	 bas=root;
+	 int flag=0;
+        if(t==NULL)
+	{   errorSound();
+		printf("\n Bilgisayar aðlarý dersini alan kimse yok.");
+	}else if(t!=NULL)
+	{   correctSound();
+		printf("\n Sadece Bilgisayar aðlarýný alanlar listesi \n");
+	}
+	while(t!=NULL)
+    {   flag=0;   
+		 	
+		int n =atoi(t->studentNo);
+		
+		 while(root!=NULL)
+		   {
+           if(n<root->no) 
+		   { 
+               root=root->sol;
+           	     		  	           }
+           else if(n>root->no)
+		    { 
+               root=root->sag;
+         							   }
+           else if(n==root->no)
+		   {    
+		   	    /* Eðer ortak öðrenci varsa, bunu hesaba katmayýp listeden devam etmemizi saðlayan kýsým */
+		   	    flag =1;
+		   	    root=bas;
+				goto b; 
+            }
+   	 	 	
+   		 }
+   		b:	 if (flag==0)printf("Adý : %s, Soyadý : %s, Numarasý : %s",t->name,t->surname,t->studentNo);
+   		 t=t->next;
+}
+}
+
+
+
+/*  birdenfazla
+    2.A)
+    Her iki dersi de birden fazla kez alan öðrenci listeleyiniz.
+    Burada temel olarak þunu söyleyebiliriz. Eðer iki dersi de birden fazla kez alan öðrencileri arýyorsak;
+	evvela bu öðrenci iki dersi de alýyor olmalý, yani iki listede de olmalý. 
+	Çözüm yolu olarak þunu izlemeliyiz. 
+	Ýki yapýda da olan öðrenciyi bul ve bu öðrenci iki dersi de birden fazla alýyorsa yazdýr.
+    
+    Biz temel olarak bir yapýyý baþtan sona gezip, her bir eleman diðer yapýda olup olmadýðýný arayacaðýz.   
+	Fakat burada iki þekilde probleme yaklaþmak mümkün.
+	  (Diyelim ki aðaç n, liste m elemanlý olsun.)								
+
+	1) Aðacýn bir elemanýný alýp, listede aramak.
+	2) Listenin bir elemanýný alýp, aðaçta aramak. 
+	
+	Biz 2. yolu seçtik çünkü; Eðer 1. yolu seçsek nxm complexity'e sahip olacaktý kodumuz. 
+	Fakat 2. yolu seçerek mxlogn complexity'e sahip olduk.
+	
+ 
+ */
+
+void birdenfazla(struct Dugum *root){
+	 
+	 struct student *t;
+	 t=first;
+	 struct Dugum *bas;
+	 bas=root;
+        if(t==NULL)
+	{   errorSound();
+		printf("\nListede veri yoktur. Yeni bir iþlem seç");
+	}else if(t!=NULL)
+	{   correctSound();
+		printf("\n Bilgisayar aðlarýný alanlar listesi \n");
+	}
+	while(t!=NULL)
+    {    
+		 	
+		int n =atoi(t->studentNo);
+		if(atoi(t->dersalma)>1) // listede 1 den fazla olan ders almalarý listeliyor.
+		
+		 
+		 
+		 while(root!=NULL)
+		   {
+		   	
+           if(n<root->no) 
+		   { 
+               root=root->sol;
+           	     		  	           }
+           else if(n>root->no)
+		    { 
+               root=root->sag;
+         							   }
+           else if(n==root->no )
+		   {    if(atoi(root->kdefa)>1 && atoi(t->dersalma)>1)
+		   	    printf("\nÖðrenci no : %d Bilg. Að dersi alma sayýsý: %s ve Bilg. Mimarisi ders alma sayýsý :%s \n ",n,t->dersalma,root->kdefa );
+		   	    
+                root=bas;
+				goto b; 
+            }
+   	 	 	
+   		 }
+   		 b:	t=t->next;
+
+}
+}
+
+
+
+/*
+   eem
+   2.D)
+   Bilgisayar Aðlarý ve Bilgisayar Mimarisi derslerinin en az birini alan öðrencileri yazýn.
+   
+   Bunun içinde temel olarak iki yapýyý da iç içe dolanmak gerekiyor. 
+   Biz þu yolu tercih ettik. Ýlk önce aðacý baþtan sona dolaþýp "eem" etiketiyle örtüþenleri yazdýrdýk.
+   Sonra  listenin içinde "eem" ile çakýþanlara tek tek baktýk ve þunu kontrol ettik:
+   Eðer listenin içindeki eem öðrencisi aðacýn içinde de varsa bunu es geçtik, çünkü aðacýn içindeki 
+   bütün eem öðrencilerini yazdýrmýþtýk. Bize gereken kýsým sadece listede olan eemleri bulup yazmaktý.
+   
+   Bu fonksiyonu iç içe iki döngü þeklinde düþünebiliriz peki neden biz bu yolu seçtik? 
+   Çünkü aðaç gezinme algoritmalarý recursive olduðu için, bunu iç kýsma yazmak tehlikeli olabilirdi. 
+   
+   Nihayetinde nasýl yazýlýrsa yazýlsýn: Bir yapý tamamen diðer yapý ise kesiþim içinde olmayan kýsmý,
+   eklenecek þekilde yapýlýrsa bu fonksiyon yazýlýrdý. Aðacý tamamen yazmayý tercih ettik. 
+
+*/
+void eem(struct Dugum *root){
+	 
+	 struct student *t;
+	 t=first;
+	 struct Dugum *bas;
+	 bas=root;
+	 eemenaz(root); //aðaçta tüm eem leri listeledik.
+        if(t==NULL)
+	{   errorSound();
+		printf("\nBilgisayar aðlarý dersini alan öðrencisi yok. \n");
+	}else if(t!=NULL)
+	{   correctSound();
+		printf("\n Bilgisayar aðlarýný alanlarýndan eem listesi: \n");
+	}
+	while(t!=NULL) //burada tüm liste eem listele ama aðaçta olan eem çýkart
+    {    		 	
+		int n =atoi(t->studentNo); //deki bu aðaçta var mý 
+          while(root!=NULL)
+		   {
+		   	
+           if(n<root->no) 
+		   { 
+               root=root->sol;
+           	     		  	           }
+           else if(n>root->no)
+		    { 
+               root=root->sag;
+         							   }
+           else if(n==root->no )
+		   {    
+		   //bu öðrenci aðaçta varsa zaten aðaç sýralanýrken listelenmiþ olacak
+		   //diðer liste elemanýndan devam edecek, listeden devam et ve aðacý baþa al.
+		  		root=bas;
+				goto b; 
+            }
+   	 	 	
+   		 }
+   		 if(strcmp(t->department,"eem")==0){
+   		 	printf("Sadece eem öðrencisi olup, listede olanlar");
+   		 	printf("ad: %s, soyad: %s, öðrenci no:%s ",t->name,t->surname,t->studentNo);
+			}
+   		 b:	t=t->next;
+
+}
+}
+
+
+/* 
+  searchavl
+  Aðaç içerisine int n þeklinde yollanmýþ bir parametrenin olup, olmadýðýný arayan fonksiyon.
+  Temel searchAVL mantýðý kullandýk, koþula göre saða ya da sola gidiyor. Fonksiyon ya aranan
+  sayý bulununca ya da artýk gidecek bir aðaç kalmayýp, NULL deðerine ulaþýnca bitiyor.
+
+*/
+
+
+ void searchavl(struct Dugum *root,int n) {
+           int sayac=1;
+           
+           while(root!=NULL){
+           if(n<root->no) { 
+                             root=root->sol;
+                             sayac++;
+                             
+                             }
+           else if(n>root->no) { 
+                             root=root->sag;
+                             
+                             sayac++;
+                              }
+           else { printf("\n Aranan %d sayisi %d. adimda bulundu.\n",n,sayac);
+              	  printf("\n Ad: %s, Soyad: %s, No: %d",root->ad,root->soyad,root->no);
+                  return; 
+                }
+                
+                }
+                printf("\n Ne yazikki olmayan bir deger girdiniz, bulamadik\n");
+           }
+
+
+void sortA(struct Dugum *root){
+	struct student *t;
+	 t=first;
+	 struct Dugum *bas;
+	 bas=root;
+	 int flag=0;
+	 int i,j,count;	
+	 char str[25][25],temp[25];
+     
+	    if(t==NULL)
+	{   errorSound();
+		printf("\nListede veri yoktur.");
+	}else if(t!=NULL)
+	{   correctSound();
+		printf("\n Her iki dersi de alan öðrencilerin ad listesi: \n");
+	}
+	while(t!=NULL)
+    {   flag=0;   
+		 	
+		int n =atoi(t->studentNo);
+		
+		 while(root!=NULL)
+		   {
+           if(n<root->no) 
+		   { 
+               root=root->sol;
+           	     		  	           }
+           else if(n>root->no)
+		    { 
+               root=root->sag;
+         							   }
+           else if(n==root->no)
+		   {    
+		   	    printf("\n Ad :%s \n",root->ad);
+		   	    count++;
+		   	    root=bas;
+				goto b; 
+            }
+   	 	 	
+   		 }
+   		b:t=t->next;
+}
+
+   puts("Ortak öðrenciler yukarda gösterildi, \n Bunlarý lütfen girin. ");
+   for(i=0;i<=count;i++)
+      gets(str[i]);
+      
+    for(i=0;i<=count;i++)
+      for(j=i+1;j<=count;j++){
+         if(strcmp(str[i],str[j])>0){
+            strcpy(temp,str[i]);
+            strcpy(str[i],str[j]);
+            strcpy(str[j],temp);
+         }
+      }
+   printf("\n Sýralanmýþ liste");
+   for(i=0;i<=count;i++)
+      puts(str[i]);
+ 
+}
+
+void sortB(){
+     struct student *t;
+	 t=first;
+	 int count=0;
+
+	 int i,j;
+	 char str[25][25],temp[25];
+     
+	    if(t==NULL)
+	{   errorSound();
+		printf("\n Listede veri yoktur.\n");
+	}else if(t!=NULL)
+	{   correctSound();
+		printf("\n Bilgisayar aðlarýný alanlar listesi \n");
+	}
+	while(t!=NULL)
+    {	printf("\n %s",t->name);
+	    count++;
+	   	t=t->next;
+
+} 
+
+printf("\n Lütfen sýralamak istediðiniz isimleri girin \n");
+for(i=0;i<=count;i++)
+      gets(str[i]);
+   for(i=0;i<=count;i++)
+      for(j=i+1;j<=count;j++){
+         if(strcmp(str[i],str[j])>0){
+            strcpy(temp,str[i]);
+            strcpy(str[i],str[j]);
+            strcpy(str[j],temp);
+         }
+      }
+   printf("Sýralanamadan sonra: \n");
+   for(i=0;i<=count;i++)
+      puts(str[i]);
+}
+
+void sortC(struct Dugum *root)
+{   
+    if(root != NULL)
+    {
+        sortC(root->sol);     
+		printf("%d \n",root->no); 
+		sortC(root->sag); 
+    }
+
+}
+
+int main(int argc, char *argv[]) {
+
+
+    setlocale(LC_ALL, "Turkish"); 
+    system("COLOR F1");
+    int o,n;
+    int sMenu=9;
+    struct Dugum *root = NULL;
+   
+    while(1)
+    {
+    	
+    		firstMenu();
+	
+		scanf("%d",&sMenu);
+		
+		if(sMenu==1){
+			bilAglariMenu();
+			scanf("%d",&o);
+			switch(o)
+			{
+				case 1:{
+					printf("\n Liste kaç kiþiden oluþacak ? \n");
+					scanf("%d",&n);
+					create_linked_list(n);
+					break;
+				}
+				case 2:{
+					display_linked_list();
+					break;
+				}
+				case 3:{
+					insertAfter();
+					break;
+				}
+				case 4:{
+					delete_from_linkedlist();
+					break;
+				}
+				case 5:{
+					search_in_linked_list();
+					break;
+				}
+				case 0:{
+					firstMenu();
+					break;
+				}
+				default: {
+					printf("\nBir þeyler ters gitti, tekrar seçim yapýn.");
+					bilAglariMenu();
+					break;
+				}
+			}
+		}
+		
+		else if(sMenu==2){
+			bilMimMenusu();
+			scanf("%d",&o);
+			switch(o){
+				case 1:{
+				       printf("\nEkleme yapýlýyor. \n");
+				       root = insert(root, 12,"Çilem",   "Akçay",     "bm", "1");
+   		 			   root = insert(root, 5, "Kutlu",   "Alibeyoðlu","bm", "2");
+ 		   			   root = insert(root, 14,"Muhammed","Erdoðan",   "eem","1");
+	  	   		       root = insert(root, 32,"Mete",    "Korkut",    "bm", "5");
+  					   root = insert(root, 7, "Merve",   "Altýok",    "bm", "1");
+  					   root = insert(root, 4, "Eþref ",  "Þeref",     "bm", "1");
+  					   root = insert(root, 27,"Dilara",  "Taçgýn",    "bm", "1");
+ 					   root = insert(root, 64,"Baran",   "Demir",     "eem","1");
+ 					   root = insert(root, 44,"Ecenur",  "Tokgöz",    "bm", "1");
+
+					    break;
+				}
+				
+				case 2:{
+					   printf("\nSilinecek öðrencinin numarasýný gir");
+					   scanf("%d",&n);
+					   root = deleteNode(root,n);
+					
+					break;
+				}
+				
+				case 3:{
+					   printf("\nListeleniyor.\n");
+	 				   preOrder(root);
+					break;
+				}
+				
+				case 4:{
+					printf("Aranacak sayýyý gir");
+	 				scanf("%d",&n);
+	 				searchavl(root,n);
+					break;
+				}
+				case 5:{
+					firstMenu();
+					break;
+				}
+				default:{
+					printf("Bir þeyler yanlýþ gitti. Tekrar seçim yap");
+					break;
+				}
+				
+			}
+			
+		}
+ 		else if(sMenu==3){
+		 birdenfazla(root);	
+		 }
+		 else if(sMenu==4){
+		 	onlyBilAg(root);
+		 }
+		 else if(sMenu==5){
+		 	bilgA_K();
+		 }
+		 else if(sMenu==6){
+		 	bilgL_Z();
+		 }
+		 else if(sMenu==7){
+		 		eem(root);
+		 }
+		 else if(sMenu==8){
+		 	sortA(root);
+		 }
+		 else if(sMenu==9)
+		 {
+		 sortB();
+		 }
+		 else if(sMenu==10)
+		 {  
+		 if(root==NULL){
+		 	errorSound();
+			 printf("\n Bilgisayar mimarisi dersini alan kimse yok!");
+		 }
+		 else{
+		 
+		 printf("\n \n Listeleniyor. \n");
+		 	sortC(root);}
+		 }
+		 
+		 else if(sMenu==0){
+		 	exit(0);
+		 }
+	else{
+	
+		printf("\nBir þeyler çok ters gitti. Tekrar seçim yapýn.");
+		firstMenu();
+	}
+    
+}
+
+
+
+
+	return 0;
+}
+
