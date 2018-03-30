@@ -1,10 +1,6 @@
-//Ödev 1
+//Ã–dev 1
 
-// 1030520710 
-// Serdar Çengel
 
-// 1030520526
-// Bahadır Utku Gögen
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -15,52 +11,52 @@
 #include <string.h>
 
 
-//Ana menümüz.
+//Ana menÃ¼mÃ¼z.
 void firstMenu(){ 
 	
 	
-    printf("\n        -Menü-"); 
-	printf("\n 1- Bilgisayar ağları menüsü (Liste)");
-	printf("\n 2- Bilgisayar mimarisi menüsü (AVL)");
-	printf("\n 3- Her iki dersi birden fazla alan öğrenciler");
-	printf("\n 4- Sadece bilgisayar ağları dersini alan öğrenciler");
-	printf("\n 5- Bilgisayar ağları A grubu A-K");
-	printf("\n 6- Bilgisayar ağları B grubu L-Z");
-	printf("\n 7- B. ağları veya B. mimarisi alan E.E ");
-	printf("\n 8- Her iki dersi de alanlar adlarına göre sırala");
-	printf("\n 9- Sadece bilgisayar ağlarını alanları soyadlarına göre sırala");
-	printf("\n 10- Bilgisayar mimarisi alanları numarasına göre sırala ");
-	printf("\n 0- Çıkış");
-    printf("\n \n Seçiminizi yapın\n \n");
+    printf("\n        -MenÃ¼-"); 
+	printf("\n 1- Bilgisayar aÄŸlarÄ± menÃ¼sÃ¼ (Liste)");
+	printf("\n 2- Bilgisayar mimarisi menÃ¼sÃ¼ (AVL)");
+	printf("\n 3- Her iki dersi birden fazla alan Ã¶ÄŸrenciler");
+	printf("\n 4- Sadece bilgisayar aÄŸlarÄ± dersini alan Ã¶ÄŸrenciler");
+	printf("\n 5- Bilgisayar aÄŸlarÄ± A grubu A-K");
+	printf("\n 6- Bilgisayar aÄŸlarÄ± B grubu L-Z");
+	printf("\n 7- B. aÄŸlarÄ± veya B. mimarisi alan E.E ");
+	printf("\n 8- Her iki dersi de alanlar adlarÄ±na gÃ¶re sÄ±rala");
+	printf("\n 9- Sadece bilgisayar aÄŸlarÄ±nÄ± alanlarÄ± soyadlarÄ±na gÃ¶re sÄ±rala");
+	printf("\n 10- Bilgisayar mimarisi alanlarÄ± numarasÄ±na gÃ¶re sÄ±rala ");
+	printf("\n 0- Ã‡Ä±kÄ±ÅŸ");
+    printf("\n \n SeÃ§iminizi yapÄ±n\n \n");
 	
 
 }
-// Bilgisayar ağları ile alakalı liste işlemlerinie yapacağımız menü
+// Bilgisayar aÄŸlarÄ± ile alakalÄ± liste iÅŸlemlerinie yapacaÄŸÄ±mÄ±z menÃ¼
 void bilAglariMenu(){
-	printf("\n Bilgisayar ağları menüsü\n");
-	printf("\n 1- Yeni liste  oluştur");
-	printf("\n 2- Listeyi görüntüle");
-	printf("\n 3- Araya kayıt ekle");
-	printf("\n 4- Bir kaydı sil");
-	printf("\n 5- Bir kayıt ara");
+	printf("\n Bilgisayar aÄŸlarÄ± menÃ¼sÃ¼\n");
+	printf("\n 1- Yeni liste  oluÅŸtur");
+	printf("\n 2- Listeyi gÃ¶rÃ¼ntÃ¼le");
+	printf("\n 3- Araya kayÄ±t ekle");
+	printf("\n 4- Bir kaydÄ± sil");
+	printf("\n 5- Bir kayÄ±t ara");
 	printf("\n 0- Geri");
-	printf("\n\n  Seçiminizi yapın.\n");
+	printf("\n\n  SeÃ§iminizi yapÄ±n.\n");
 }
 
-// Bilgisayar mimarisi ile alakalı AVL ağaç işlemlerimizi yapacağımız menü
+// Bilgisayar mimarisi ile alakalÄ± AVL aÄŸaÃ§ iÅŸlemlerimizi yapacaÄŸÄ±mÄ±z menÃ¼
 void bilMimMenusu(){
  
-     	printf("\n Bilgisayar Mimarisi Menüsü");
-		printf("\n 1- Kayıt ekle:");
-        printf("\n 2- Bir kaydı sil:");
-        printf("\n 3- Ağacı görüntüle");
-        printf("\n 4- Bir kaydı ara");
+     	printf("\n Bilgisayar Mimarisi MenÃ¼sÃ¼");
+		printf("\n 1- KayÄ±t ekle:");
+        printf("\n 2- Bir kaydÄ± sil:");
+        printf("\n 3- AÄŸacÄ± gÃ¶rÃ¼ntÃ¼le");
+        printf("\n 4- Bir kaydÄ± ara");
         printf("\n 0- Geri ");
-        printf("\n\n  Seçiminizi yapın.");
+        printf("\n\n  SeÃ§iminizi yapÄ±n.");
  
 }
 
-// Bilgisayar ağlari dersini alan öğrenciler için ayrılan yer (Liste)
+// Bilgisayar aÄŸlari dersini alan Ã¶ÄŸrenciler iÃ§in ayrÄ±lan yer (Liste)
 struct student 
 {
 	char name[100];
@@ -73,7 +69,7 @@ struct student
 };
 struct student *first=NULL,*last=NULL,*k;
 
-// Bilgisayar mimarisi dersini alan öğrenciler için ayrılan yer(Ağaç)
+// Bilgisayar mimarisi dersini alan Ã¶ÄŸrenciler iÃ§in ayrÄ±lan yer(AÄŸaÃ§)
 typedef struct Dugum
 {
     int no;
@@ -88,8 +84,8 @@ typedef struct Dugum
 
 
 
-/* Programda olumlu ya da olumsuz dönüşler olduğunda 
-kullanmak üzere yazılmış iki adet basit melodi*/
+/* Programda olumlu ya da olumsuz dÃ¶nÃ¼ÅŸler olduÄŸunda 
+kullanmak Ã¼zere yazÄ±lmÄ±ÅŸ iki adet basit melodi*/
 void correctSound()
 {   //Fa oktav
 	Beep(2093/2,200);
@@ -105,28 +101,28 @@ void errorSound(){
 }
 
 
-//Bağlantılı Liste oluşturma
+//BaÄŸlantÄ±lÄ± Liste oluÅŸturma
 void create_linked_list(int n)
 {
 int i;
 int student_counter=1;
 if(n<1)
 {   errorSound();
-	printf("\nListeye eklenecek kişi sayısı 1'den küçük olamaz.'");
+	printf("\nListeye eklenecek kiÅŸi sayÄ±sÄ± 1'den kÃ¼Ã§Ã¼k olamaz.'");
 }
    	else if(n>0)
 {
 	
 		first=(struct student*)malloc(sizeof(struct student));
-		printf("%d- Öğrencinin adı : \n",student_counter);
+		printf("%d- Ã–ÄŸrencinin adÄ± : \n",student_counter);
 		scanf("%s",first->name);
-		printf("%d- Öğrencinin soyadı : \n",student_counter);
+		printf("%d- Ã–ÄŸrencinin soyadÄ± : \n",student_counter);
 		scanf("%s",first->surname);
-		printf("%d- Öğrencinin numarası : \n",student_counter);
+		printf("%d- Ã–ÄŸrencinin numarasÄ± : \n",student_counter);
 		scanf("%s",first->studentNo);
-		printf("%d- Öğrencinin bölümü : \n",student_counter);
+		printf("%d- Ã–ÄŸrencinin bÃ¶lÃ¼mÃ¼ : \n",student_counter);
 		scanf("%s",first->department);
-		printf("%d- Öğrenci kaçıncı defa bu dersi alıyor : \n",student_counter);
+		printf("%d- Ã–ÄŸrenci kaÃ§Ä±ncÄ± defa bu dersi alÄ±yor : \n",student_counter);
 		scanf("%s",first->dersalma);
 		first->next=NULL;
 		last=first;
@@ -142,15 +138,15 @@ printf("\n");
 for(i=1;i<n;i++){
 	student_counter++;
 	k=(struct student*)malloc(sizeof(struct student));
-	printf("%d- Öğrencinin adı : \n",student_counter);
+	printf("%d- Ã–ÄŸrencinin adÄ± : \n",student_counter);
 	scanf("%s",k->name);
-	printf("%d- Öğrencinin soyadı : \n",student_counter);
+	printf("%d- Ã–ÄŸrencinin soyadÄ± : \n",student_counter);
 	scanf("%s",k->surname);
-	printf("%d- Öğrencinin numarası : \n",student_counter);
+	printf("%d- Ã–ÄŸrencinin numarasÄ± : \n",student_counter);
 	scanf("%s",k->studentNo);
-	printf("%d- Öğrencinin bölümü : \n",student_counter);
+	printf("%d- Ã–ÄŸrencinin bÃ¶lÃ¼mÃ¼ : \n",student_counter);
 	scanf("%s",k->department);
-	printf("%d- Öğrenci kaçıncı defa bu dersi alıyor : \n",student_counter);
+	printf("%d- Ã–ÄŸrenci kaÃ§Ä±ncÄ± defa bu dersi alÄ±yor : \n",student_counter);
 	scanf("%s",k->dersalma);
 	printf("\n");
 	k->next=NULL;
@@ -158,18 +154,18 @@ for(i=1;i<n;i++){
 	last=k;
 	correctSound();
 	if(i==n-1){
-		printf("\n Eklemeler yapıldı. Ana menüye dönüyorsunuz.");
+		printf("\n Eklemeler yapÄ±ldÄ±. Ana menÃ¼ye dÃ¶nÃ¼yorsunuz.");
 	}
 
  }
 
 }
 	
-//Bağlantılı Liste arama yapma
+//BaÄŸlantÄ±lÄ± Liste arama yapma
 void search_in_linked_list(){
 	char r[10];	
 	int flag=0;
-	printf("\n Aramak istediğiniz öğrenci numarasını giriniz");
+	printf("\n Aramak istediÄŸiniz Ã¶ÄŸrenci numarasÄ±nÄ± giriniz");
 	scanf("%s",r);
 	struct student *t;
 	t=first;
@@ -178,11 +174,11 @@ void search_in_linked_list(){
 		if(strcmpi(r,t->studentNo)==0)
 		{   correctSound();
 			printf("\n Aranan numara listede bulundu.");
-			printf("\n Adı :%s ",t->name);
-			printf("\n Soyadı :%s ",t->surname);
-			printf("\n Numarası :%s ",t->studentNo);
-			printf("\n Bölümü :%s ",t->department);
-			printf("\n %s. Defa bu dersi alıyor : ",t->dersalma);
+			printf("\n AdÄ± :%s ",t->name);
+			printf("\n SoyadÄ± :%s ",t->surname);
+			printf("\n NumarasÄ± :%s ",t->studentNo);
+			printf("\n BÃ¶lÃ¼mÃ¼ :%s ",t->department);
+			printf("\n %s. Defa bu dersi alÄ±yor : ",t->dersalma);
 			flag=1;
 			break;
 			
@@ -193,12 +189,12 @@ void search_in_linked_list(){
 	if(flag==0)
 	{
 	errorSound();
-	printf("\n Böyle bir numara kaydı bulunmamaktadır. Ana menüye dönüyorsunuz.\n");
+	printf("\n BÃ¶yle bir numara kaydÄ± bulunmamaktadÄ±r. Ana menÃ¼ye dÃ¶nÃ¼yorsunuz.\n");
 	}
 
 }
 
-//Bağlantılı Liste görüntüleme
+//BaÄŸlantÄ±lÄ± Liste gÃ¶rÃ¼ntÃ¼leme
 void display_linked_list(){
 	
 	int sayac=1;
@@ -206,27 +202,27 @@ void display_linked_list(){
 	t=first;
 	if(t==NULL)
 	{   errorSound();
-		printf("\n Listede veri yoktur. Yeni bir işlem seç");
+		printf("\n Listede veri yoktur. Yeni bir iÅŸlem seÃ§");
 	}
 	
 	else if(t!=NULL)
 	{   correctSound();
-		printf("\n Bilgisayar ağlarını alanlar listesi \n");
+		printf("\n Bilgisayar aÄŸlarÄ±nÄ± alanlar listesi \n");
 	}
 	
 	while(t!=NULL)
     {    
-        printf("\n Adı : %s",t->name);
-		printf("\n Soyadı : %s",t->surname);
-		printf("\n Numarası : %s",t->studentNo); 	
-   	 	printf("\n Bölümü : %s",t->department);
+        printf("\n AdÄ± : %s",t->name);
+		printf("\n SoyadÄ± : %s",t->surname);
+		printf("\n NumarasÄ± : %s",t->studentNo); 	
+   	 	printf("\n BÃ¶lÃ¼mÃ¼ : %s",t->department);
    	 	printf("\n Dersi alma : %s\n\n",t->dersalma);
    	 	t=t->next;
    	 	sayac++;	 	
     }
 }
 
-//Bir kayıttan sonra veri ekleme
+//Bir kayÄ±ttan sonra veri ekleme
 void insertAfter(){
 	char r[10];
 	int flag=0;
@@ -240,15 +236,15 @@ void insertAfter(){
 	  {
 		
 		k=(struct student*)malloc(sizeof(struct student));
-		printf("\n Eklenecek öğrencinin adı: ");
+		printf("\n Eklenecek Ã¶ÄŸrencinin adÄ±: ");
 		scanf("%s",k->name);
-		printf("\n Eklenecek öğrencinin soyadı: ");
+		printf("\n Eklenecek Ã¶ÄŸrencinin soyadÄ±: ");
 		scanf("%s",k->surname);
-		printf("\n Eklenecek öğrencinin numarası: ");
+		printf("\n Eklenecek Ã¶ÄŸrencinin numarasÄ±: ");
 		scanf("%s",k->studentNo);
-		printf("\n Eklenecek öğrencinin bölümü");
+		printf("\n Eklenecek Ã¶ÄŸrencinin bÃ¶lÃ¼mÃ¼");
 		scanf("%s",k->department);
-		printf("\n Eklenecek öğrenci bu dersi kaçıncı kez alıyor?");
+		printf("\n Eklenecek Ã¶ÄŸrenci bu dersi kaÃ§Ä±ncÄ± kez alÄ±yor?");
 		scanf("%s",k->dersalma);
 		k->next=t->next;
 		t->next=k;
@@ -261,7 +257,7 @@ void insertAfter(){
 	
 	if(flag==0){
 		errorSound();
-		printf("\n Listeye ekleme işlemi tamamlanamadı\n");
+		printf("\n Listeye ekleme iÅŸlemi tamamlanamadÄ±\n");
 	}
 	firstMenu();
 }
@@ -276,13 +272,13 @@ void delete_from_linkedlist()
 	back=first;
 	if(back==NULL)
 	{   errorSound();
-		printf("\n Listede veri yoktur. Yeni bir işlem seçiniz");
+		printf("\n Listede veri yoktur. Yeni bir iÅŸlem seÃ§iniz");
 		firstMenu();
 	}
 	else
 	{
 		
-		printf("\n Silmek istediğiniz öğrencinin numarasını giriniz.");
+		printf("\n Silmek istediÄŸiniz Ã¶ÄŸrencinin numarasÄ±nÄ± giriniz.");
 		scanf("%s",r);
 		if(strcmpi(r,first->studentNo)==0)
 		{
@@ -306,21 +302,21 @@ void delete_from_linkedlist()
 		}
 		if(flag==1)
 		{   correctSound();
-			printf("\n Kayıt silindi");
+			printf("\n KayÄ±t silindi");
 		}
 		
 		else if(flag==0){
 			errorSound();
-			printf("\n Bulunamadı");
+			printf("\n BulunamadÄ±");
 		}
 	}
 }
 
-// BURADAN SONRA AVL İLE ALAKALI gereken fonksiyonlar vs.
+// BURADAN SONRA AVL Ä°LE ALAKALI gereken fonksiyonlar vs.
 
 
 
-// Hangi sayı daha büyük return eden fonksiyon. Kütüphane çakışması yüzünden maxx adını verdik. 
+// Hangi sayÄ± daha bÃ¼yÃ¼k return eden fonksiyon. KÃ¼tÃ¼phane Ã§akÄ±ÅŸmasÄ± yÃ¼zÃ¼nden maxx adÄ±nÄ± verdik. 
  int maxx(int a,int b);
 
 int maxx(int a, int b)
@@ -328,7 +324,7 @@ int maxx(int a, int b)
     return (a > b)? a : b;
 }
  
-// Ağacın yüksekliği için yazdığımız fonksiyon
+// AÄŸacÄ±n yÃ¼ksekliÄŸi iÃ§in yazdÄ±ÄŸÄ±mÄ±z fonksiyon
 int yukseklik(struct Dugum *N)
 {
     if (N == NULL)
@@ -337,12 +333,12 @@ int yukseklik(struct Dugum *N)
 }
  
 
-/* Yeni düğüm oluşturma 
-No öğrenci no
+/* Yeni dÃ¼ÄŸÃ¼m oluÅŸturma 
+No Ã¶ÄŸrenci no
 A ad
 S soyad
-B bölüm
-K dersi kaç defa alıyor.
+B bÃ¶lÃ¼m
+K dersi kaÃ§ defa alÄ±yor.
 
  */
  
@@ -362,7 +358,7 @@ struct Dugum* newNode(int no,char a[20],char s[20], char b[20],char k[20])
 }
  
  
-//Sağa dönderme için
+//SaÄŸa dÃ¶nderme iÃ§in
 struct Dugum *sagdon(struct Dugum *y)
 {
     struct Dugum *x = y->sol;
@@ -371,14 +367,14 @@ struct Dugum *sagdon(struct Dugum *y)
     x->sag = y;
     y->sol = T2;
  
-    // Yüksekliği güncelleme
+    // YÃ¼ksekliÄŸi gÃ¼ncelleme
     y->yukseklik = maxx(yukseklik(y->sol), yukseklik(y->sag))+1;
     x->yukseklik = maxx(yukseklik(x->sol), yukseklik(x->sag))+1;
  
     return x;
 }
  
-//Sola dönderme
+//Sola dÃ¶nderme
 struct Dugum *soldon(struct Dugum *x)
 {
     struct Dugum *y = x->sag;
@@ -387,14 +383,14 @@ struct Dugum *soldon(struct Dugum *x)
     y->sol = x;
     x->sag = T2;
  
-     //Yükseklik güncelleme 
+     //YÃ¼kseklik gÃ¼ncelleme 
     x->yukseklik = maxx(yukseklik(x->sol), yukseklik(x->sag))+1;
     y->yukseklik = maxx(yukseklik(y->sol), yukseklik(y->sag))+1;
  
     return y;
 }
  
-// Denge kontrolü yapıyoruz.
+// Denge kontrolÃ¼ yapÄ±yoruz.
 int dengecontrol(struct Dugum *N)
 {
     if (N == NULL)
@@ -403,7 +399,7 @@ int dengecontrol(struct Dugum *N)
 }
 
 /* insert etme fonksiyonumuz.
-no,a,s,b,k new ile aynı 
+no,a,s,b,k new ile aynÄ± 
 */
 struct Dugum* insert(struct Dugum* node, int no,char a[20], char s[20], char b[20],char k[20])
 {
@@ -418,31 +414,31 @@ struct Dugum* insert(struct Dugum* node, int no,char a[20], char s[20], char b[2
     else 
         return node;
  
-    /* 2. Yükseklik güncelleme tekrar. */
+    /* 2. YÃ¼kseklik gÃ¼ncelleme tekrar. */
     node->yukseklik = 1 + maxx(yukseklik(node->sol),
                            yukseklik(node->sag));
  
-    /* 3. Denge kontrolümüzü yapıyoruz. */
+    /* 3. Denge kontrolÃ¼mÃ¼zÃ¼ yapÄ±yoruz. */
     int denge = dengecontrol(node);
  
-    // 4 farklı durum olabilir.
+    // 4 farklÄ± durum olabilir.
  
-    // sola çift dönüş
+    // sola Ã§ift dÃ¶nÃ¼ÅŸ
     if (denge > 1 && no < node->sol->no)
         return sagdon(node);
  
-    // sağa çift dönüş
+    // saÄŸa Ã§ift dÃ¶nÃ¼ÅŸ
     if (denge < -1 && no > node->sag->no)
         return soldon(node);
  
-    // sağ dönüş
+    // saÄŸ dÃ¶nÃ¼ÅŸ
     if (denge > 1 && no > node->sol->no)
     {
         node->sol =  soldon(node->sol);
         return sagdon(node);
     }
  
-    // sol dönüş
+    // sol dÃ¶nÃ¼ÅŸ
     if (denge < -1 && no < node->sag->no)
     {
         node->sag = sagdon(node->sag);
@@ -453,8 +449,8 @@ struct Dugum* insert(struct Dugum* node, int no,char a[20], char s[20], char b[2
     return node;
 }
  
-/* Minumum değeri almak için yazıyoruz. 
- Basit bir mantığı var, sürekli sola git taa ki NULL bulana kadar. */
+/* Minumum deÄŸeri almak iÃ§in yazÄ±yoruz. 
+ Basit bir mantÄ±ÄŸÄ± var, sÃ¼rekli sola git taa ki NULL bulana kadar. */
 struct Dugum * minValueNode(struct Dugum* node)
 {
     struct Dugum* current = node;
@@ -466,15 +462,15 @@ struct Dugum * minValueNode(struct Dugum* node)
     return current;
 }
  
-/* Bir düğümü silmek için gereken kodlar, düğümü no ya göre seçiyoruz. */
+/* Bir dÃ¼ÄŸÃ¼mÃ¼ silmek iÃ§in gereken kodlar, dÃ¼ÄŸÃ¼mÃ¼ no ya gÃ¶re seÃ§iyoruz. */
 struct Dugum* deleteNode(struct Dugum* root, int no)
 {
-    // Düğüm boşsa geri dönüyoruz.
+    // DÃ¼ÄŸÃ¼m boÅŸsa geri dÃ¶nÃ¼yoruz.
  
     if (root == NULL)
         return root;
  
-    // No parametresine göre sola ya da sağa gidip, o düğümü arıyoruz. 
+    // No parametresine gÃ¶re sola ya da saÄŸa gidip, o dÃ¼ÄŸÃ¼mÃ¼ arÄ±yoruz. 
     if ( no < root->no )
         root->sol = deleteNode(root->sol, no);
  
@@ -485,46 +481,46 @@ struct Dugum* deleteNode(struct Dugum* root, int no)
    
     else
     {
-        // Bir ya da hiç çocuk olma durumu
+        // Bir ya da hiÃ§ Ã§ocuk olma durumu
         if( (root->sol == NULL) || (root->sag == NULL) )
         {
             struct Dugum *temp = root->sol ? root->sol :
                                              root->sag;
  
-            // Hiç çocuk yoksa
+            // HiÃ§ Ã§ocuk yoksa
             if (temp == NULL)
             {
                 temp = root;
                 root = NULL;
             }
-            else // Bir çocuk varsa
+            else // Bir Ã§ocuk varsa
              *root = *temp; 
             free(temp);
         }
         else
         {
-            // iki çocuklu düğüm sağ ağacın en küçüğünü alıyoruz.
+            // iki Ã§ocuklu dÃ¼ÄŸÃ¼m saÄŸ aÄŸacÄ±n en kÃ¼Ã§Ã¼ÄŸÃ¼nÃ¼ alÄ±yoruz.
             struct Dugum* temp = minValueNode(root->sag);
  
             root->no = temp->no;
  
-            // Düğümü siliyoruz.
+            // DÃ¼ÄŸÃ¼mÃ¼ siliyoruz.
             root->sag = deleteNode(root->sag, temp->no);
         }
     }
  
-    // Ağacın tek bir düğümü verse geri dönüyoruz.
+    // AÄŸacÄ±n tek bir dÃ¼ÄŸÃ¼mÃ¼ verse geri dÃ¶nÃ¼yoruz.
     if (root == NULL)
       return root;
  
-    // Yeni durumdaki yüksekliği güncelliyoruz.
+    // Yeni durumdaki yÃ¼ksekliÄŸi gÃ¼ncelliyoruz.
     root->yukseklik = 1 + maxx(yukseklik(root->sol),
                            yukseklik(root->sag));
  
-    // Gerekli denge kontrolünü yapıyoruz.
+    // Gerekli denge kontrolÃ¼nÃ¼ yapÄ±yoruz.
     int denge = dengecontrol(root);
  
-   // Yine klasik 4 durum var, dengelenene kadar bu kontroller ve işlemler yapılır.
+   // Yine klasik 4 durum var, dengelenene kadar bu kontroller ve iÅŸlemler yapÄ±lÄ±r.
  
     if (denge > 1 && dengecontrol(root->sol) >= 0)
         return sagdon(root);
@@ -547,29 +543,29 @@ struct Dugum* deleteNode(struct Dugum* root, int no)
     return root;
 }
  
-//preOrder şekilde sıralama (KÖK SOL SAĞ)
+//preOrder ÅŸekilde sÄ±ralama (KÃ–K SOL SAÄ)
 void preOrder(struct Dugum *root)
 {
     if(root != NULL)
     {
-        printf("Öğrenci no: %d Adı:%s Soyadı: %s Bölümü: %s ve %s Defadır alıyor.   \n", root->no,root->ad,root->soyad,root->bolum,root->kdefa);
+        printf("Ã–ÄŸrenci no: %d AdÄ±:%s SoyadÄ±: %s BÃ¶lÃ¼mÃ¼: %s ve %s DefadÄ±r alÄ±yor.   \n", root->no,root->ad,root->soyad,root->bolum,root->kdefa);
         preOrder(root->sol);
         preOrder(root->sag);
     }
 }
 
 
-/*İki dersten en az birini alan e.e.m. öğrencileri için yazdığımız fonksiyon. 
-Burada ağaç içindeki bölümü eem olan her öğrenci yazdırılıyor.
-Bu ağaca, Bağlı listede olup fakat ağaçta olmayanları ekleyeceğiz 
-böylece iki dersten en az birini alan öğrencileri yazdıracağız.
+/*Ä°ki dersten en az birini alan e.e.m. Ã¶ÄŸrencileri iÃ§in yazdÄ±ÄŸÄ±mÄ±z fonksiyon. 
+Burada aÄŸaÃ§ iÃ§indeki bÃ¶lÃ¼mÃ¼ eem olan her Ã¶ÄŸrenci yazdÄ±rÄ±lÄ±yor.
+Bu aÄŸaca, BaÄŸlÄ± listede olup fakat aÄŸaÃ§ta olmayanlarÄ± ekleyeceÄŸiz 
+bÃ¶ylece iki dersten en az birini alan Ã¶ÄŸrencileri yazdÄ±racaÄŸÄ±z.
 */
 
 void eemenaz(struct Dugum *root)
 {
 if(root != NULL)
     {  if(strcmp(root->bolum,"eem")==0)
-        printf("Öğrenci no: %d Adı:%s Soyadı: %s Bölümü: %s ve %s Defadır alıyor.   \n", root->no,root->ad,root->soyad,root->bolum,root->kdefa);
+        printf("Ã–ÄŸrenci no: %d AdÄ±:%s SoyadÄ±: %s BÃ¶lÃ¼mÃ¼: %s ve %s DefadÄ±r alÄ±yor.   \n", root->no,root->ad,root->soyad,root->bolum,root->kdefa);
         eemenaz(root->sol);
         eemenaz(root->sag);
     }
@@ -577,49 +573,49 @@ if(root != NULL)
 
 /*
   2.C)
-  Bilgisayar ağları sınıfını(Listeyi) Soyadlarına göre A-K ve L-Z şeklinde yazdırın.
-  Bu fonksiyon en genel geçer şekliyle şu mantıkla yazılır:
-  Liste baştan sona gezilir, ve gerekli koşulun durumuna bakılır.  
+  Bilgisayar aÄŸlarÄ± sÄ±nÄ±fÄ±nÄ±(Listeyi) SoyadlarÄ±na gÃ¶re A-K ve L-Z ÅŸeklinde yazdÄ±rÄ±n.
+  Bu fonksiyon en genel geÃ§er ÅŸekliyle ÅŸu mantÄ±kla yazÄ±lÄ±r:
+  Liste baÅŸtan sona gezilir, ve gerekli koÅŸulun durumuna bakÄ±lÄ±r.  
 
  */
-// Soyadları A-K olanları listeleme
+// SoyadlarÄ± A-K olanlarÄ± listeleme
 void bilgA_K(){
 	   struct student *t;
 	   t=first;
 	   char temp[1]="k";
         if(t==NULL)
 	{   errorSound();
-		printf("\n Listede veri yoktur. Yeni bir işlem seç");
+		printf("\n Listede veri yoktur. Yeni bir iÅŸlem seÃ§");
 	}else if(t!=NULL)
 	{   correctSound();
-		printf("\n Soyadına göre listelenmiş A-K listesi\n");
+		printf("\n SoyadÄ±na gÃ¶re listelenmiÅŸ A-K listesi\n");
 	}
 	while(t!=NULL)
     {  
        
 	     if(strcmp(t->surname,temp)<0)
-	     printf("Soyadı :%s, Adı :%s, Numarası :%s \n",t->surname,t->name,t->studentNo);
+	     printf("SoyadÄ± :%s, AdÄ± :%s, NumarasÄ± :%s \n",t->surname,t->name,t->studentNo);
    		 t=t->next;
 }
 
 }
-// Soyadları L-Z olanları Listeleme
+// SoyadlarÄ± L-Z olanlarÄ± Listeleme
 void bilgL_Z(){
 	   struct student *t;
 	   t=first;
 	   char temp[1]="k";
         if(t==NULL)
 	{   errorSound();
-		printf("\n Listede veri yoktur. Yeni bir işlem seç");
+		printf("\n Listede veri yoktur. Yeni bir iÅŸlem seÃ§");
 	}else if(t!=NULL)
 	{   correctSound();
-		printf("\n Soyadına göre listelenmiş L-Z listesi\n");
+		printf("\n SoyadÄ±na gÃ¶re listelenmiÅŸ L-Z listesi\n");
 	}
 	while(t!=NULL)
     {  
        
 	     if(strcmp(t->surname,temp)>0)
-	     printf("Soyadı :%s, Adı :%s, Numarası :%s \n",t->surname,t->name,t->studentNo);
+	     printf("SoyadÄ± :%s, AdÄ± :%s, NumarasÄ± :%s \n",t->surname,t->name,t->studentNo);
     	
 	
    		 t=t->next;
@@ -629,13 +625,13 @@ void bilgL_Z(){
 
 /* onlyBilAg
    2.B)
-   Sadece bilgisayar ağları dersini alan öğrenciler.(Bunlar Bil. Mimarisi almıyor olacak)
-   Bunu yapmak için bilgisayar ağları listesini tek tek okuyup, listedeki her elemanın
-   bilgisayar mimarisi ağacında olup olmadığını kontrol etmeliyiz, eğer ağaçta varsa 
-   direkt o değeri atlayıp, listedeki diğer öğrenci için işlem devam etmeli taa ki liste bitene kadar.
-   Bunun için ortak değer bulma durumunda diğer liste elemanına geçecek şekilde basit bir goto kodu kullandık.
+   Sadece bilgisayar aÄŸlarÄ± dersini alan Ã¶ÄŸrenciler.(Bunlar Bil. Mimarisi almÄ±yor olacak)
+   Bunu yapmak iÃ§in bilgisayar aÄŸlarÄ± listesini tek tek okuyup, listedeki her elemanÄ±n
+   bilgisayar mimarisi aÄŸacÄ±nda olup olmadÄ±ÄŸÄ±nÄ± kontrol etmeliyiz, eÄŸer aÄŸaÃ§ta varsa 
+   direkt o deÄŸeri atlayÄ±p, listedeki diÄŸer Ã¶ÄŸrenci iÃ§in iÅŸlem devam etmeli taa ki liste bitene kadar.
+   Bunun iÃ§in ortak deÄŸer bulma durumunda diÄŸer liste elemanÄ±na geÃ§ecek ÅŸekilde basit bir goto kodu kullandÄ±k.
    
-   ***Burada önemli olan burayı kontrol edeceğim****
+   ***Burada Ã¶nemli olan burayÄ± kontrol edeceÄŸim****
 */
 
 void onlyBilAg(struct Dugum *root){
@@ -646,10 +642,10 @@ void onlyBilAg(struct Dugum *root){
 	 int flag=0;
         if(t==NULL)
 	{   errorSound();
-		printf("\n Bilgisayar ağları dersini alan kimse yok.");
+		printf("\n Bilgisayar aÄŸlarÄ± dersini alan kimse yok.");
 	}else if(t!=NULL)
 	{   correctSound();
-		printf("\n Sadece Bilgisayar ağlarını alanlar listesi \n");
+		printf("\n Sadece Bilgisayar aÄŸlarÄ±nÄ± alanlar listesi \n");
 	}
 	while(t!=NULL)
     {   flag=0;   
@@ -668,14 +664,14 @@ void onlyBilAg(struct Dugum *root){
          							   }
            else if(n==root->no)
 		   {    
-		   	    /* Eğer ortak öğrenci varsa, bunu hesaba katmayıp listeden devam etmemizi sağlayan kısım */
+		   	    /* EÄŸer ortak Ã¶ÄŸrenci varsa, bunu hesaba katmayÄ±p listeden devam etmemizi saÄŸlayan kÄ±sÄ±m */
 		   	    flag =1;
 		   	    root=bas;
 				goto b; 
             }
    	 	 	
    		 }
-   		b:	 if (flag==0)printf("Adı : %s, Soyadı : %s, Numarası : %s",t->name,t->surname,t->studentNo);
+   		b:	 if (flag==0)printf("AdÄ± : %s, SoyadÄ± : %s, NumarasÄ± : %s",t->name,t->surname,t->studentNo);
    		 t=t->next;
 }
 }
@@ -684,21 +680,21 @@ void onlyBilAg(struct Dugum *root){
 
 /*  birdenfazla
     2.A)
-    Her iki dersi de birden fazla kez alan öğrenci listeleyiniz.
-    Burada temel olarak şunu söyleyebiliriz. Eğer iki dersi de birden fazla kez alan öğrencileri arıyorsak;
-	evvela bu öğrenci iki dersi de alıyor olmalı, yani iki listede de olmalı. 
-	Çözüm yolu olarak şunu izlemeliyiz. 
-	İki yapıda da olan öğrenciyi bul ve bu öğrenci iki dersi de birden fazla alıyorsa yazdır.
+    Her iki dersi de birden fazla kez alan Ã¶ÄŸrenci listeleyiniz.
+    Burada temel olarak ÅŸunu sÃ¶yleyebiliriz. EÄŸer iki dersi de birden fazla kez alan Ã¶ÄŸrencileri arÄ±yorsak;
+	evvela bu Ã¶ÄŸrenci iki dersi de alÄ±yor olmalÄ±, yani iki listede de olmalÄ±. 
+	Ã‡Ã¶zÃ¼m yolu olarak ÅŸunu izlemeliyiz. 
+	Ä°ki yapÄ±da da olan Ã¶ÄŸrenciyi bul ve bu Ã¶ÄŸrenci iki dersi de birden fazla alÄ±yorsa yazdÄ±r.
     
-    Biz temel olarak bir yapıyı baştan sona gezip, her bir eleman diğer yapıda olup olmadığını arayacağız.   
-	Fakat burada iki şekilde probleme yaklaşmak mümkün.
-	  (Diyelim ki ağaç n, liste m elemanlı olsun.)								
+    Biz temel olarak bir yapÄ±yÄ± baÅŸtan sona gezip, her bir eleman diÄŸer yapÄ±da olup olmadÄ±ÄŸÄ±nÄ± arayacaÄŸÄ±z.   
+	Fakat burada iki ÅŸekilde probleme yaklaÅŸmak mÃ¼mkÃ¼n.
+	  (Diyelim ki aÄŸaÃ§ n, liste m elemanlÄ± olsun.)								
 
-	1) Ağacın bir elemanını alıp, listede aramak.
-	2) Listenin bir elemanını alıp, ağaçta aramak. 
+	1) AÄŸacÄ±n bir elemanÄ±nÄ± alÄ±p, listede aramak.
+	2) Listenin bir elemanÄ±nÄ± alÄ±p, aÄŸaÃ§ta aramak. 
 	
-	Biz 2. yolu seçtik çünkü; Eğer 1. yolu seçsek nxm complexity'e sahip olacaktı kodumuz. 
-	Fakat 2. yolu seçerek mxlogn complexity'e sahip olduk.
+	Biz 2. yolu seÃ§tik Ã§Ã¼nkÃ¼; EÄŸer 1. yolu seÃ§sek nxm complexity'e sahip olacaktÄ± kodumuz. 
+	Fakat 2. yolu seÃ§erek mxlogn complexity'e sahip olduk.
 	
  
  */
@@ -711,16 +707,16 @@ void birdenfazla(struct Dugum *root){
 	 bas=root;
         if(t==NULL)
 	{   errorSound();
-		printf("\nListede veri yoktur. Yeni bir işlem seç");
+		printf("\nListede veri yoktur. Yeni bir iÅŸlem seÃ§");
 	}else if(t!=NULL)
 	{   correctSound();
-		printf("\n Bilgisayar ağlarını alanlar listesi \n");
+		printf("\n Bilgisayar aÄŸlarÄ±nÄ± alanlar listesi \n");
 	}
 	while(t!=NULL)
     {    
 		 	
 		int n =atoi(t->studentNo);
-		if(atoi(t->dersalma)>1) // listede 1 den fazla olan ders almaları listeliyor.
+		if(atoi(t->dersalma)>1) // listede 1 den fazla olan ders almalarÄ± listeliyor.
 		
 		 
 		 
@@ -737,7 +733,7 @@ void birdenfazla(struct Dugum *root){
          							   }
            else if(n==root->no )
 		   {    if(atoi(root->kdefa)>1 && atoi(t->dersalma)>1)
-		   	    printf("\nÖğrenci no : %d Bilg. Ağ dersi alma sayısı: %s ve Bilg. Mimarisi ders alma sayısı :%s \n ",n,t->dersalma,root->kdefa );
+		   	    printf("\nÃ–ÄŸrenci no : %d Bilg. AÄŸ dersi alma sayÄ±sÄ±: %s ve Bilg. Mimarisi ders alma sayÄ±sÄ± :%s \n ",n,t->dersalma,root->kdefa );
 		   	    
                 root=bas;
 				goto b; 
@@ -754,19 +750,19 @@ void birdenfazla(struct Dugum *root){
 /*
    eem
    2.D)
-   Bilgisayar Ağları ve Bilgisayar Mimarisi derslerinin en az birini alan öğrencileri yazın.
+   Bilgisayar AÄŸlarÄ± ve Bilgisayar Mimarisi derslerinin en az birini alan Ã¶ÄŸrencileri yazÄ±n.
    
-   Bunun içinde temel olarak iki yapıyı da iç içe dolanmak gerekiyor. 
-   Biz şu yolu tercih ettik. İlk önce ağacı baştan sona dolaşıp "eem" etiketiyle örtüşenleri yazdırdık.
-   Sonra  listenin içinde "eem" ile çakışanlara tek tek baktık ve şunu kontrol ettik:
-   Eğer listenin içindeki eem öğrencisi ağacın içinde de varsa bunu es geçtik, çünkü ağacın içindeki 
-   bütün eem öğrencilerini yazdırmıştık. Bize gereken kısım sadece listede olan eemleri bulup yazmaktı.
+   Bunun iÃ§inde temel olarak iki yapÄ±yÄ± da iÃ§ iÃ§e dolanmak gerekiyor. 
+   Biz ÅŸu yolu tercih ettik. Ä°lk Ã¶nce aÄŸacÄ± baÅŸtan sona dolaÅŸÄ±p "eem" etiketiyle Ã¶rtÃ¼ÅŸenleri yazdÄ±rdÄ±k.
+   Sonra  listenin iÃ§inde "eem" ile Ã§akÄ±ÅŸanlara tek tek baktÄ±k ve ÅŸunu kontrol ettik:
+   EÄŸer listenin iÃ§indeki eem Ã¶ÄŸrencisi aÄŸacÄ±n iÃ§inde de varsa bunu es geÃ§tik, Ã§Ã¼nkÃ¼ aÄŸacÄ±n iÃ§indeki 
+   bÃ¼tÃ¼n eem Ã¶ÄŸrencilerini yazdÄ±rmÄ±ÅŸtÄ±k. Bize gereken kÄ±sÄ±m sadece listede olan eemleri bulup yazmaktÄ±.
    
-   Bu fonksiyonu iç içe iki döngü şeklinde düşünebiliriz peki neden biz bu yolu seçtik? 
-   Çünkü ağaç gezinme algoritmaları recursive olduğu için, bunu iç kısma yazmak tehlikeli olabilirdi. 
+   Bu fonksiyonu iÃ§ iÃ§e iki dÃ¶ngÃ¼ ÅŸeklinde dÃ¼ÅŸÃ¼nebiliriz peki neden biz bu yolu seÃ§tik? 
+   Ã‡Ã¼nkÃ¼ aÄŸaÃ§ gezinme algoritmalarÄ± recursive olduÄŸu iÃ§in, bunu iÃ§ kÄ±sma yazmak tehlikeli olabilirdi. 
    
-   Nihayetinde nasıl yazılırsa yazılsın: Bir yapı tamamen diğer yapı ise kesişim içinde olmayan kısmı,
-   eklenecek şekilde yapılırsa bu fonksiyon yazılırdı. Ağacı tamamen yazmayı tercih ettik. 
+   Nihayetinde nasÄ±l yazÄ±lÄ±rsa yazÄ±lsÄ±n: Bir yapÄ± tamamen diÄŸer yapÄ± ise kesiÅŸim iÃ§inde olmayan kÄ±smÄ±,
+   eklenecek ÅŸekilde yapÄ±lÄ±rsa bu fonksiyon yazÄ±lÄ±rdÄ±. AÄŸacÄ± tamamen yazmayÄ± tercih ettik. 
 
 */
 void eem(struct Dugum *root){
@@ -775,17 +771,17 @@ void eem(struct Dugum *root){
 	 t=first;
 	 struct Dugum *bas;
 	 bas=root;
-	 eemenaz(root); //ağaçta tüm eem leri listeledik.
+	 eemenaz(root); //aÄŸaÃ§ta tÃ¼m eem leri listeledik.
         if(t==NULL)
 	{   errorSound();
-		printf("\nBilgisayar ağları dersini alan öğrencisi yok. \n");
+		printf("\nBilgisayar aÄŸlarÄ± dersini alan Ã¶ÄŸrencisi yok. \n");
 	}else if(t!=NULL)
 	{   correctSound();
-		printf("\n Bilgisayar ağlarını alanlarından eem listesi: \n");
+		printf("\n Bilgisayar aÄŸlarÄ±nÄ± alanlarÄ±ndan eem listesi: \n");
 	}
-	while(t!=NULL) //burada tüm liste eem listele ama ağaçta olan eem çıkart
+	while(t!=NULL) //burada tÃ¼m liste eem listele ama aÄŸaÃ§ta olan eem Ã§Ä±kart
     {    		 	
-		int n =atoi(t->studentNo); //deki bu ağaçta var mı 
+		int n =atoi(t->studentNo); //deki bu aÄŸaÃ§ta var mÄ± 
           while(root!=NULL)
 		   {
 		   	
@@ -799,16 +795,16 @@ void eem(struct Dugum *root){
          							   }
            else if(n==root->no )
 		   {    
-		   //bu öğrenci ağaçta varsa zaten ağaç sıralanırken listelenmiş olacak
-		   //diğer liste elemanından devam edecek, listeden devam et ve ağacı başa al.
+		   //bu Ã¶ÄŸrenci aÄŸaÃ§ta varsa zaten aÄŸaÃ§ sÄ±ralanÄ±rken listelenmiÅŸ olacak
+		   //diÄŸer liste elemanÄ±ndan devam edecek, listeden devam et ve aÄŸacÄ± baÅŸa al.
 		  		root=bas;
 				goto b; 
             }
    	 	 	
    		 }
    		 if(strcmp(t->department,"eem")==0){
-   		 	printf("Sadece eem öğrencisi olup, listede olanlar");
-   		 	printf("ad: %s, soyad: %s, öğrenci no:%s ",t->name,t->surname,t->studentNo);
+   		 	printf("Sadece eem Ã¶ÄŸrencisi olup, listede olanlar");
+   		 	printf("ad: %s, soyad: %s, Ã¶ÄŸrenci no:%s ",t->name,t->surname,t->studentNo);
 			}
    		 b:	t=t->next;
 
@@ -818,9 +814,9 @@ void eem(struct Dugum *root){
 
 /* 
   searchavl
-  Ağaç içerisine int n şeklinde yollanmış bir parametrenin olup, olmadığını arayan fonksiyon.
-  Temel searchAVL mantığı kullandık, koşula göre sağa ya da sola gidiyor. Fonksiyon ya aranan
-  sayı bulununca ya da artık gidecek bir ağaç kalmayıp, NULL değerine ulaşınca bitiyor.
+  AÄŸaÃ§ iÃ§erisine int n ÅŸeklinde yollanmÄ±ÅŸ bir parametrenin olup, olmadÄ±ÄŸÄ±nÄ± arayan fonksiyon.
+  Temel searchAVL mantÄ±ÄŸÄ± kullandÄ±k, koÅŸula gÃ¶re saÄŸa ya da sola gidiyor. Fonksiyon ya aranan
+  sayÄ± bulununca ya da artÄ±k gidecek bir aÄŸaÃ§ kalmayÄ±p, NULL deÄŸerine ulaÅŸÄ±nca bitiyor.
 
 */
 
@@ -863,7 +859,7 @@ void sortA(struct Dugum *root){
 		printf("\nListede veri yoktur.");
 	}else if(t!=NULL)
 	{   correctSound();
-		printf("\n Her iki dersi de alan öğrencilerin ad listesi: \n");
+		printf("\n Her iki dersi de alan Ã¶ÄŸrencilerin ad listesi: \n");
 	}
 	while(t!=NULL)
     {   flag=0;   
@@ -892,7 +888,7 @@ void sortA(struct Dugum *root){
    		b:t=t->next;
 }
 
-   puts("Ortak öğrenciler yukarda gösterildi, \n Bunları lütfen girin. ");
+   puts("Ortak Ã¶ÄŸrenciler yukarda gÃ¶sterildi, \n BunlarÄ± lÃ¼tfen girin. ");
    for(i=0;i<=count;i++)
       gets(str[i]);
       
@@ -904,7 +900,7 @@ void sortA(struct Dugum *root){
             strcpy(str[j],temp);
          }
       }
-   printf("\n Sıralanmış liste");
+   printf("\n SÄ±ralanmÄ±ÅŸ liste");
    for(i=0;i<=count;i++)
       puts(str[i]);
  
@@ -923,7 +919,7 @@ void sortB(){
 		printf("\n Listede veri yoktur.\n");
 	}else if(t!=NULL)
 	{   correctSound();
-		printf("\n Bilgisayar ağlarını alanlar listesi \n");
+		printf("\n Bilgisayar aÄŸlarÄ±nÄ± alanlar listesi \n");
 	}
 	while(t!=NULL)
     {	printf("\n %s",t->name);
@@ -932,7 +928,7 @@ void sortB(){
 
 } 
 
-printf("\n Lütfen sıralamak istediğiniz isimleri girin \n");
+printf("\n LÃ¼tfen sÄ±ralamak istediÄŸiniz isimleri girin \n");
 for(i=0;i<=count;i++)
       gets(str[i]);
    for(i=0;i<=count;i++)
@@ -943,7 +939,7 @@ for(i=0;i<=count;i++)
             strcpy(str[j],temp);
          }
       }
-   printf("Sıralanamadan sonra: \n");
+   printf("SÄ±ralanamadan sonra: \n");
    for(i=0;i<=count;i++)
       puts(str[i]);
 }
@@ -981,7 +977,7 @@ int main(int argc, char *argv[]) {
 			switch(o)
 			{
 				case 1:{
-					printf("\n Liste kaç kişiden oluşacak ? \n");
+					printf("\n Liste kaÃ§ kiÅŸiden oluÅŸacak ? \n");
 					scanf("%d",&n);
 					create_linked_list(n);
 					break;
@@ -1007,7 +1003,7 @@ int main(int argc, char *argv[]) {
 					break;
 				}
 				default: {
-					printf("\nBir şeyler ters gitti, tekrar seçim yapın.");
+					printf("\nBir ÅŸeyler ters gitti, tekrar seÃ§im yapÄ±n.");
 					bilAglariMenu();
 					break;
 				}
@@ -1019,22 +1015,22 @@ int main(int argc, char *argv[]) {
 			scanf("%d",&o);
 			switch(o){
 				case 1:{
-				       printf("\nEkleme yapılıyor. \n");
-				       root = insert(root, 12,"Çilem",   "Akçay",     "bm", "1");
-   		 			   root = insert(root, 5, "Kutlu",   "Alibeyoğlu","bm", "2");
- 		   			   root = insert(root, 14,"Muhammed","Erdoğan",   "eem","1");
+				       printf("\nEkleme yapÄ±lÄ±yor. \n");
+				       root = insert(root, 12,"Ã‡ilem",   "AkÃ§ay",     "bm", "1");
+   		 			   root = insert(root, 5, "Kutlu",   "AlibeyoÄŸlu","bm", "2");
+ 		   			   root = insert(root, 14,"Muhammed","ErdoÄŸan",   "eem","1");
 	  	   		       root = insert(root, 32,"Mete",    "Korkut",    "bm", "5");
-  					   root = insert(root, 7, "Merve",   "Altıok",    "bm", "1");
-  					   root = insert(root, 4, "Eşref ",  "Şeref",     "bm", "1");
-  					   root = insert(root, 27,"Dilara",  "Taçgın",    "bm", "1");
+  					   root = insert(root, 7, "Merve",   "AltÄ±ok",    "bm", "1");
+  					   root = insert(root, 4, "EÅŸref ",  "Åeref",     "bm", "1");
+  					   root = insert(root, 27,"Dilara",  "TaÃ§gÄ±n",    "bm", "1");
  					   root = insert(root, 64,"Baran",   "Demir",     "eem","1");
- 					   root = insert(root, 44,"Ecenur",  "Tokgöz",    "bm", "1");
+ 					   root = insert(root, 44,"Ecenur",  "TokgÃ¶z",    "bm", "1");
 
 					    break;
 				}
 				
 				case 2:{
-					   printf("\nSilinecek öğrencinin numarasını gir");
+					   printf("\nSilinecek Ã¶ÄŸrencinin numarasÄ±nÄ± gir");
 					   scanf("%d",&n);
 					   root = deleteNode(root,n);
 					
@@ -1048,7 +1044,7 @@ int main(int argc, char *argv[]) {
 				}
 				
 				case 4:{
-					printf("Aranacak sayıyı gir");
+					printf("Aranacak sayÄ±yÄ± gir");
 	 				scanf("%d",&n);
 	 				searchavl(root,n);
 					break;
@@ -1058,7 +1054,7 @@ int main(int argc, char *argv[]) {
 					break;
 				}
 				default:{
-					printf("Bir şeyler yanlış gitti. Tekrar seçim yap");
+					printf("Bir ÅŸeyler yanlÄ±ÅŸ gitti. Tekrar seÃ§im yap");
 					break;
 				}
 				
@@ -1104,7 +1100,7 @@ int main(int argc, char *argv[]) {
 		 }
 	else{
 	
-		printf("\nBir şeyler çok ters gitti. Tekrar seçim yapın.");
+		printf("\nBir ÅŸeyler Ã§ok ters gitti. Tekrar seÃ§im yapÄ±n.");
 		firstMenu();
 	}
     
