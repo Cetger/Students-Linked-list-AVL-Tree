@@ -1,5 +1,6 @@
 //Ödev 1
 
+We changed smt...
 
 
 #include <stdio.h>
